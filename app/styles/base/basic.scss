@@ -1,22 +1,48 @@
 @import "../tools/variables";
 
+body{
+  padding-left:240px;
+  font-family: $font-family-helvetica-neue;
+}
 .main-content{
   background-color:$content-background-color;
 }
-.create-delete-edit-event-main-button{
-  width: 123px;
-  height: 36px;
+//buttons styles
+.btn-no-bg{
   border-radius: 3px;
   border: solid 1px $color-border-grey-blue;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
   color: $color-button-blue;
   background: transparent;
   padding: 9px 16px;
+  font-size: 16px;
 }
-
+.btn-blue-bg{
+  border-radius: 3px;
+  background-color: $color-button-blue;
+  color: $color-white;
+  font-size:16px;
+  padding: 8px 17px 10px 18px;
+}
+.header-toolbar{
+  float: left;
+  margin-right: 12px;
+  cursor: pointer;
+  :first-child{
+    border-right:none!important;
+    border-bottom-right-radius: 0!important;
+    border-top-right-radius: 0 !important;
+  }
+  :nth-child(2){
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0 !important;
+  }
+  .header-toolbar-button{
+    font-size:16px;
+    text-align: center;
+    border-radius: 3px;
+    border: solid 1px $color-border-grey-blue;
+    color: $color-button-blue;
+    float: left;
+    padding: 8px 15px 10px;
+  }
+}
