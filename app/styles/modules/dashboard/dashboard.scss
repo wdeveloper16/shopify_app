@@ -1,48 +1,47 @@
 @import "../../tools/variables";
 @import "../../tools/mixins";
 
-.content{
-  background-color:$content-background-color;
+.content {
   padding-right: 45px;
   padding-left: 45px;
-  padding-top:40px;
-  .content-header{
-    .dashboard-content-title{
+  padding-top: 40px;
+  .content-header {
+    .dashboard-content-title {
+      margin-right: 15px;
       font-size: 18px;
       font-weight: bold;
       color: $color-black;
       vertical-align: middle;
-      margin-right: 15px;
     }
   }
-  .content-main{
+  .content-main {
     padding-top: 20px;
-    .event-item{
+    .event-item {
       border-radius: 3px;
       background-color: $background-color-white;
       box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
       margin-bottom: 15px;
-      .event-thumb{
+      .event-thumb {
         img{
-
+          /* */
         }
       }
-      .event-detail{
+      .event-detail {
         font-size: 14px;
         font-weight: bold;
         line-height: 1.57;
         color: $color-sold-tickets;
-        padding: 7px 19px 13px 19px;
-        .event-title{
+        padding: 7px 19px 13px;
+        .event-title {
           font-size: 16px;
           line-height: 1.38;
           color: $color-less-black;
           margin-bottom: 0;
         }
-        .event-tickets-sold{
+        .event-tickets-sold {
           margin-bottom: 0;
         }
-        .event-profit{
+        .event-profit {
           font-weight: normal;
           color: $color-less-black;
           margin-bottom: 0;

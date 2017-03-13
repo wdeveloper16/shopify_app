@@ -1,32 +1,29 @@
 @import "../tools/variables";
 
-header{
+header {
   background-color: $background-color-white;
-  .header-breadcrumb{
-    padding-top: 16px;
-    padding-bottom: 17px;
+  .header-breadcrumb {
     font-size: 20px;
+    margin: 14px 0;
     color: $color-less-grey;
-    .header-icon{
+    .header-icon {
       width: 20px;
       height: 20px;
-      margin-right: 10px;
-      /*margin-bottom: 4px;*/
+      margin: 0 6px 4px 26px;
     }
-    .header-menu-title{
+    .header-menu-title {
       margin-right: 7px;
     }
-    .header-slash{
+    .header-slash {
       margin-right: 1px;
     }
-    .page-title{
+    .page-title {
       color: $color-less-black;
     }
   }
-  .header-right-nav{
+  .header-right-nav {
     padding-top: 10px;
-    padding-bottom:10px;
+    padding-bottom: 10px;
     padding-right: 22px;
-    font-size: 16px;
   }
 }
