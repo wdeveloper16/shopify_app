@@ -1,0 +1,57 @@
+//background-color
+$background-color-white:#fff;
+$content-background-color:#ebeef0;
+
+//color
+$color-white:#ffffff;
+$color-button-blue:#0078bd;
+$color-sold-tickets:#5c951e;
+$color-less-black:#1a1a1a;
+$color-black:#000000;
+$color-less-grey:#798c9c;
+$color-border-grey-blue:#d3dbe2;
+
+//font-family
+$font-family-helvetica-neue-light: HelveticaNeueLight, Arial, sans-serif;
+$font-family-helvetica-neue-lt: HelveticaNeueLt, Arial, sans-serif;
+$font-family-helvetica-neue: HelveticaNeue, Arial, sans-serif;
+$font-family-helvetica-neue-thin: HelveticaNeueThin, Arial, sans-serif;
+$font-family-helvetica-neue-bold: HelveticaNeueBold, Arial, sans-serif;
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated $screen-xs
+$screen-xs:                  320px !default;
+//** Deprecated $screen-xs-min
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated $screen-phone
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated $screen-sm
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated $screen-tablet
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated $screen-md
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated $screen-desktop
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated $screen-lg
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated $screen-lg-desktop
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;

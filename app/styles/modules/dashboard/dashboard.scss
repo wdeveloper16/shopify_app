@@ -1,0 +1,71 @@
+@import "../../tools/variables";
+@import "../../tools/mixins";
+
+.main_dashboard{
+  .dashboard{
+    .dashboard_content{
+      background-color:$content-background-color;
+      padding-top: 38px;
+      padding-left: 43px;
+      padding-right: 57px;
+      .dashboard-content-title-and-create-button-area{
+        padding-left:13px;
+        padding-right:0;
+        .dashboard-content-title{
+          font-size: 18px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $color-black;
+          vertical-align: middle;
+          display: inline-block;
+          margin-right: 15px;
+        }
+      }
+      .event-thumbnails-area{
+        padding-left:2px;
+        margin-top: 21px;
+        .event-thumbnails{
+          cursor: pointer;
+          margin-bottom:15px;
+          .event-thumbnail-elements{
+            /*max-height: 280px;*/
+            border-radius: 3px;
+            background-color: #ffffff;
+            box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+            .event-thumbnail-image{
+
+            }
+            .event-thumbnail-description{
+              padding: 7px 19px 13px 19px;
+              font-size: 14px;
+              font-weight: bold;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.57;
+              letter-spacing: normal;
+              color: $color-less-black;
+              .event-thumbnail-description-title{
+                font-size: 16px;
+                line-height: 1.38;
+              }
+              .event-thumbnail-description-tickets-sold{
+                color:$color-sold-tickets;
+              }
+              .event-thumbnail-description-profit{
+                font-weight: normal;
+              }
+            }
+            .middle-event-thumbnail-description{
+              padding-top:6px!important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

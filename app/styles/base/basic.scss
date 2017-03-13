@@ -1,0 +1,22 @@
+@import "../tools/variables";
+
+.main-content{
+  background-color:$content-background-color;
+}
+.create-delete-edit-event-main-button{
+  width: 123px;
+  height: 36px;
+  border-radius: 3px;
+  border: solid 1px $color-border-grey-blue;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: $color-button-blue;
+  background: transparent;
+  padding: 9px 16px;
+}
+
