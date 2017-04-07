@@ -1,0 +1,77 @@
+/*custom.scss*/
+.breadcrumb {
+  background-color: transparent;
+  float: left;
+  margin-bottom: 0px;
+  margin-top: 7px; }
+
+.container-fluid {
+  padding: 0px; }
+
+.event-header {
+  margin-bottom: 30px;
+  padding-top: 30px; }
+  .event-header h4 {
+    float: left;
+    margin: 7px 20px 7px 0px; }
+  .event-header .btn-default {
+    background: transparent;
+    color: #337ab7;
+    float: left; }
+
+.event-list p {
+  margin-bottom: 3px; }
+
+.event-list .thumbnail {
+  -webkit-box-shadow: 0px 2px 4px 0px #ccc;
+  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 0px 2px 4px 0px #ccc;
+  /* Firefox 3.5 - 3.6 */
+  box-shadow: 0px 2px 4px 0px #ccc;
+  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */ }
+
+.event-name {
+  font-weight: 600; }
+
+.event-nav {
+  margin-top: 7px; }
+  .event-nav li {
+    float: left; }
+  .event-nav .btn-primary {
+    margin-left: 10px; }
+  .event-nav .btn-default {
+    color: #337ab7; }
+
+.left-section {
+  background-color: #32373D; }
+
+.profit {
+  font-size: 12px; }
+
+.right-section {
+  background-color: #ECF0F3;
+  padding: 0px; }
+  .right-section .container-fluid {
+    padding-left: 30px;
+    padding-right: 30px; }
+
+.navbar-default {
+  background-color: #ffffff;
+  border: 0px; }
+
+#navBar {
+  border-top: 0px; }
+
+.navbar-toggle {
+  float: left; }
+
+.row {
+  margin: 0px; }
+
+.small-headline {
+  margin-top: 15px; }
+
+.sold-ticket {
+  color: #599240;
+  font-size: 13px;
+  font-weight: 600; }

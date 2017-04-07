@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopify_App</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/bower_components/summernote/dist/summernote.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+
+    <div class="create-event-scr page col-sm-12 col-xs-12 col-md-12 no-padding">
+        <header class="header col-sm-12 col-md-12 hidden-xs no-padding">
+            <div class="header-breadcrumb col-sm-6 col-md-6 no-padding pull-left">
+                <img class="header-icon" src="./images/icon_header.svg" alt="">
+                <span class="header-menu-title">Sell Tickets</span>
+                <span class="header-slash">/</span>
+                <span class="page-title">Create Event</span>
+            </div>
+            <div class="header-right-nav no-padding pull-right text-right">
+                <div class="header-toolbar">
+                    <button type="button" class="btn header-toolbar-button">Dashboard</button>
+                    <button type="button" class="btn header-toolbar-button">Help</button>
+                </div>
+                <button type="button" class="btn btn-primary btn-blue-bg">Create event</button>
+            </div>
+        </header>
+        <header class="header col-xs-12 visible-xs no-padding-xs">
+            <div class="header-breadcrumb-xs col-xs-12">
+                <button type="button" class="btn btn-default btn-nav-toggle">
+                    <img src="./images/icon_nav_blue.svg" alt="">
+                </button>
+                <span class="page-title">Dashboard</span>
+                </a>
+            </div>
+            <div class="col-xs-12 header-right-nav">
+                <div class="header-toolbar">
+                    <button type="button" class="btn header-toolbar-button">Dashboard</button>
+                    <button type="button" class="btn header-toolbar-button">Help</button>
+                </div>
+                <button type="button" class="btn btn-primary btn-blue-bg">Create event</button>
+            </div>
+        </header>
+
+        <section class="col-sm-12 col-xs-12 col-md-12 content no-padding">
+
+            <div class="content-right col-sm-8 col-xs-12 col-md-8">
+              <div class="content-right-md">
+                <label class="content-header">Event name</label>
+                <input type="text" name="event-text" class="event-text form-control" placeholder="Summer festival">
+                <label class="content-header">Description</label>
+                <div id="ticket-wysiwyg"></div>
+              </div>
+              <div class="content-right-md">
+                <label class="content-header2">Images</label>
+                <a href="#" class="upload-img-link">Upload Image</a>
+                <img src="./images/upload-img.png" class="img-responsive upload-img">
+                <div class="upload-img-label">Drop files to upload</div>
+              </div>
+              <div class="content-right-md">
+                <label class="content-header2">Tickets</label>
+                <table class="table" id="addTicketType">
+                    <thead>
+                      <tr>
+                        <td>Ticket type</td>
+                        <td>Quantity</td>
+                        <td colspan="2">Price</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input type="text" name="" value="General admis" class="form-control">
+                        </td>
+                        <td>
+                          <input type="text" name="" value="5,000" class="form-control ticket-type-qty">
+                        </td>
+                        <td>
+                          <input type="text" name="" value="£10.00" class="form-control ticket-type-price">
+                        </td>
+                        <td>
+                          <button class="del-ticket-type">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input type="text" name="" value="" class="form-control" placeholder="VIP">
+                        </td>
+                        <td>
+                          <input type="text" name="" value="" class="form-control ticket-type-qty" placeholder="0">
+                        </td>
+                        <td colspan="2">
+                          <input type="text" name="" value="" class="form-control ticket-type-price" placeholder="£0.00">
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-revert">Add another ticket type</button>
+              </div>
+              <div class="content-buttons col-sm-12 col-xs-12 col-md-12 no-padding hidden-xs">
+                <button class="btn btn-revert">Cancel</button>
+                <button class="btn btn-blue-bg float-right">Save event</button>
+              </div>
+            </div>
+              
+
+            <div class="content-left col-sm-4 col-xs-12 col-md-4 no-padding">
+              <div class="content-left-md">
+                <i class="fa fa-flag" aria-hidden="true"></i>
+                <h3 class="content-header">Creating an event</h3>
+                <p class="content-desc">
+                  Once an event has been created it appears in your <u>product listings.</u> This is where you can edit event details and change ticket prices.
+                </p>
+            </div>
+
+            <div class="content-buttons col-sm-12 col-xs-12 col-md-8 no-padding visible-xs">
+              <button class="btn btn-revert">Cancel</button>
+              <button class="btn btn-blue-bg float-right">Save event</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/summernote/dist/summernote.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

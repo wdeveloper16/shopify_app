@@ -1,22 +1,89 @@
 @import "../tools/variables";
+@import "../tools/mixins";
 
-.main-content{
-  background-color:$content-background-color;
+body {
+  font-family: $font-family-helvetica-neue;
 }
-.create-delete-edit-event-main-button{
-  width: 123px;
-  height: 36px;
-  border-radius: 3px;
-  border: solid 1px $color-border-grey-blue;
+
+.page {
+  min-height: 100vh;
+  background-color: $content-background-color;
+}
+
+.btn-no-bg,
+.btn-blue-bg,
+.header-toolbar-button {
   font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
+  border-radius: 3px;
+  padding: 0 16px;
+  height: 36px;
+}
+
+.btn-no-bg {
+  border: solid 1px $color-border-grey-blue;
   color: $color-button-blue;
   background: transparent;
-  padding: 9px 16px;
 }
 
+.btn-blue-bg {
+  background-color: $color-button-blue;
+  color: $color-white;
+  font-size: 16px !important;
+  padding: 0px 16px !important;
+  height: 36px !important;
+  
+  &:hover {
+    background-color: #0078e0;
+    color: $color-white;
+  }
+}
+
+.btn-revert {
+  @include border-radius(3px);
+  border: 1px solid #d3dbe2;
+  background-color: #ffffff;
+  color: #0078bd;
+  font-size: 16px !important;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 0px 16px !important;
+  height: 36px !important;
+
+
+  &:hover {
+    color: #0078bd;
+    background-color: #fafafa;
+    border-color: #d3dbe2;
+  }
+}
+
+.btn-primary {
+  font-size: 16px !important;
+  padding: 0px 16px !important;
+  height: 36px !important;
+}
+
+.float-right {
+  float: right;
+}
+
+.header-toolbar {
+  float: left;
+  margin-right: 12px;
+  :first-child {
+    border-right: none !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+  :last-child {
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0 !important;
+  }
+  .header-toolbar-button {
+    float: left;
+    text-align: center;
+    border: solid 1px $color-border-grey-blue;
+    color: $color-button-blue;
+    background-color: white;
+  }
+}

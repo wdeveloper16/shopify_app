@@ -1,0 +1,180 @@
+.help-scr {
+	.content {
+		padding: 0 !important;
+
+		@include breakpoint(768px) {
+			padding-left: 22px !important;
+			padding-right: 22px !important;
+		}
+
+		.content-header {
+			color: #000000;
+			font-family: HelveticaNeue, Arial, sans-serif;
+			font-size: 18px;
+			font-weight: bold;
+			font-style: normal;
+			font-stretch: normal;
+			letter-spacing: normal;
+			line-height: normal;
+			margin: 17px 0px 14px;
+
+			@include breakpoint(768px) {
+				margin-top: 26px;
+			}
+		}
+
+		.content-header2 {
+			margin: 24px 0px 18px;
+
+			@include breakpoint(768px) {
+				margin-top: 40px;
+			}
+		}
+
+		.content-header3 {
+			margin: 11px 0px 14px;
+
+			@include breakpoint(768px) {
+				margin-top: 27px;
+			}
+		}
+
+		.btn-primary {
+		  @include border-radius(3px);
+		  border: 1px solid #d3dbe2;
+		  background-color: #ffffff;
+		  color: #0078bd;
+		  font-size: 16px;
+			line-height: normal;
+			letter-spacing: normal;
+		  padding: 8px 9px 10px 10px;
+			text-align: left;
+		}
+
+		.btn-save {
+			background-color: #0078bd;
+			color: #ffffff;
+			float: right;
+			font-family: HelveticaNeue, Arial, sans-serif;
+			font-size: 16px;
+			line-height: normal;
+			letter-spacing: normal;
+			text-align: left;
+			color: #ffffff;
+		}
+
+		.content-desc {
+			padding: 0px;
+			font-size: 15px;
+		  line-height: 1.6;
+		  letter-spacing: normal;
+		  text-align: left;
+		  color: #1a1a1a;
+		}
+
+		.content-right {
+			background-color: transparent;
+			padding: 0;
+
+			@include breakpoint(768px) {
+				background-color: transparent;
+				@include box-shadow(none);
+			}
+
+			.content-right-md {
+				background-color: #ffffff;
+				@include box-shadow(0 3px 3px 0 rgba(0, 0, 0, 0.1));
+				float: left;
+				padding: 0px 15px 25px;
+				margin: 0px 0px 15px;
+				position: relative;
+				width: 100%;
+
+				@include breakpoint(768px) {
+					margin-bottom: 20px;
+					margin-top: 22px;
+					padding: 0px 22px 23px;
+				}
+
+				.gray-box-container {
+					padding: 0;
+
+					.gray-box {
+						background-color: #d8d8d8;
+						float: left;
+						width: 100%;
+						height: 163px;
+						margin-top: 20px;
+
+						@include breakpoint(768px) {
+							margin-top: 26px;
+						}
+						@include breakpoint(425px) {
+							width: 48%;
+						}
+						&+.gray-box {
+							float: right;
+						}
+					}
+				}
+			}
+		}
+
+		.content-left {
+			padding: 0;
+			@include breakpoint(768px) {
+				padding: 0 0 0 22px;
+			}
+
+			.content-left-md {
+				background-color: #f5f6f7;
+				@include box-shadow(0 3px 3px 0 rgba(0, 0, 0, 0.1));
+				margin-bottom: 16px;
+				padding-bottom: 17px;
+
+				@include breakpoint(768px) {
+					margin-top: 22px;
+				}
+
+				.content-header {
+					color: #000000;
+					display: inline-block;
+					font-family: HelveticaNeue, Arial, sans-serif;
+					font-size: 18px;
+					font-weight: bold;
+					line-height: normal;
+					letter-spacing: normal;
+					margin-top: 26px;
+					margin-left: 0px;
+					padding-left: 15px;
+
+					@include breakpoint(768px) {
+						padding-left: 22px;
+					}
+				}
+
+				.fa-flag {
+					color: #0078bd;
+					margin-left: 15px;
+					position: relative;
+					font-size: 27px;
+					top: 2px;
+				}
+
+				.help-link {
+					display: block;
+				  font-size: 15px;
+				  line-height: 1.47;
+				  letter-spacing: normal;
+					margin: 0px 15px 15px;
+				  text-align: left;
+				  color: #0078bd;
+
+					@include breakpoint(768px) {
+						margin: 0px 15px 10px 22px;
+					}
+				}
+			}
+		}
+	}
+}
