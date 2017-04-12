@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Shopify_App</title>
+
+	<!-- Bootstrap -->
+	<link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+    <div class="edit-ticket-scr page col-sm-12 col-xs-12 col-md-12 no-padding">
+        <header class="header col-sm-12 col-md-12 hidden-xs no-padding">
+            <div class="header-breadcrumb col-sm-6 col-md-6 no-padding pull-left">
+                <img class="header-icon" src="./images/icon_header.svg" alt="">
+                <span class="header-menu-title">Sell Tickets</span>
+                <span class="header-slash">/</span>
+                <span class="page-title">Ticket Settings</span>
+            </div>
+            <div class="header-right-nav no-padding pull-right text-right">
+                <div class="header-toolbar">
+                    <button type="button" class="btn header-toolbar-button">Dashboard</button>
+                    <button type="button" class="btn header-toolbar-button">Help</button>
+                </div>
+                <button type="button" class="btn btn-primary btn-blue-bg">Create event</button>
+            </div>
+        </header>
+        <header class="header col-xs-12 visible-xs no-padding-xs">
+            <div class="header-breadcrumb-xs col-xs-12">
+                <button type="button" class="btn btn-default btn-nav-toggle">
+                    <img src="./images/icon_nav_blue.svg" alt="">
+                </button>
+                <span class="page-title">Dashboard</span>
+                </a>
+            </div>
+            <div class="col-xs-12 header-right-nav">
+                <div class="header-toolbar">
+                    <button type="button" class="btn header-toolbar-button">Dashboard</button>
+                    <button type="button" class="btn header-toolbar-button">Help</button>
+                </div>
+                <button type="button" class="btn btn-primary btn-blue-bg">Create event</button>
+            </div>
+        </header>
+
+        <section class="col-sm-12 col-xs-12 col-md-12 content no-padding">
+
+            <div class="content-right col-sm-8 col-xs-12 col-md-8">
+              <div class="content-right-md">
+                <h3 class="content-header">Edit</h3>
+                <p class="content-desc">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a elementum felis. Ut hendrerit, nisi vitae lobortis accumsan, velit nibh fringilla elit, ut aliquet odio neque sed tellus.
+                </p>
+                <h4 class="content-label">Subject</h4>
+                <div contenteditable="true" class="form-control edit-subj">
+                    Update available for"{{attachments[01].product.name}}"
+                </div>
+
+                <h4 class="content-label">Body</h4>
+                <textarea class="form-control edit-body visible-xs">Dear {{customer.firstname}},
+
+Please find attached your tickets to { { event.name } }.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim lectus eu dui tempor viverra..
+
+Thanks { { Your.name } }</textarea>
+                <textarea class="form-control edit-body hidden-xs">Dear {{customer.firstname}},
+
+Please find attached your tickets to { { event.name } }.
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim lectus eu dui tempor viverra. Aliquam elit erat, lacinia ac pretium ac, iaculis a est. Pellentesque quis placerat urna. Ut non purus metus. 
+
+
+Thanks { { Your.name } }</textarea>
+              </div>
+            </div>
+
+            <div class="content-left col-sm-4 col-xs-12 col-md-4 no-padding">
+              <div class="content-left-md">
+                <h3 class="content-header">Liquid variables</h3>
+                <p class="content-desc">
+                  Use liquid variables to personalise the contents of your emails.
+                </p>
+                <hr>
+                <h4 class="content-label">Shop Information</h4>
+                <textarea>{{customer.first_name}}
+{{customer.first_name}}</textarea>
+                <h4 class="content-label">Customer Information</h4>
+                <textarea>{{customer.first_name}}
+{{customer.first_name}}</textarea>
+              </div>
+            </div>
+
+            <div class="content-buttons col-sm-8 col-xs-12 col-md-8 no-padding">
+              <button class="btn btn-revert">Revert to default</button>
+              <button class="btn btn-blue-bg float-right">Save</button>
+            </div>
+        </section>
+    </div>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/app.js"></script>
+</body>
+</html>
