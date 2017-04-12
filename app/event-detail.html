@@ -90,7 +90,7 @@
               <ul class="nav nav-tabs">
                 <li class="active tickets-sold-title"><a data-toggle="tab" href="#home">Tickets sold</a></li>
                 <li>
-                  <img src="images/icon_download.svg" class="download-icon">
+                  <img class="icon icon-download" src="images/icon_download.svg">
                   <a href="#" class="download-doorlist">Download doorlist</a>
                 </li>
               </ul>
@@ -99,22 +99,22 @@
                 <div id="home" class="tab-pane fade in active">
                   <div class="tab-search col-sm-12 col-xs-12 col-md-12 no-padding">
                     <span class="search-icon col-sm-12 col-xs-12 col-md-6 no-padding">
-                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <img class="icon" src="images/icon_search.svg">
                       <input type="text" class="form-control hidden-xs" placeholder="Start typing to search by name or code…">
                       <input type="text" class="form-control visible-xs search-xs" placeholder="Start typing to search by name…">
                     </span>
 
                     <span class="search-links col-sm-12 col-xs-12 col-md-6 no-padding">
-                      <img src="images/icon_download.svg" class="download-icon">
+                      <img class="icon icon-download" src="images/icon_download.svg">
                       <a href="#" class="download-doorlist hidden-xs">Download doorlist</a>
-                      <i class="fa fa-plus" aria-hidden="true"></i>
+                      <img class="icon icon-plus" src="images/plus/icon_plus_lblue.svg">
                       <a href="#" class="add-ticket-link" data-toggle="modal" data-target="#addTicketModal">Add Ticket</a>
                       <!-- Modal -->
                       <div class="modal fade" id="addTicketModal" tabindex="-1" role="dialog" aria-labelledby="ticketModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content model-content-custom">
                             <div class="modal-header">
-                              <i class="fa fa-plus" aria-hidden="true"></i>
+                              <img class="icon icon-plus" src="images/plus/icon_plus_gray.svg">
                               <h5 class="modal-title" id="addticketModalLabel">Add tickets?</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -128,15 +128,15 @@
                                     <option>Standard</option>
                                     <option>VIP</option>
                                   </select>
-                                  <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                  <img class="icon icon-arrowdown" src="images/arrowdown/icon_arrowdown_gray.svg">
                                 </div>
                                 <label for="ticketHolder">Name of ticket holder</label>
                                 <input type="text" name="ticketHolder" id="ticketHolder" class="form-control">
                                 <label for="ticketQty">Quantity</label>
                                 <div class="form-qty-group">
-                                  <button class="decrement-qty"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                  <button class="decrement-qty"><img class="icon icon-minus" src="images/minus/icon_minus_quantity_gray.svg"></button>
                                   <input type="text" name="ticketQty" id="ticketQty" class="form-control form-qty" value="0">
-                                  <button class="increment-qty"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                  <button class="increment-qty"><img class="icon icon-plus" src="images/plus/icon_plus_quantity_blue.svg"></button>
                                   <span class="qty-message">You can asign multiple tickets to one ticket holder.</span>
                                 </div>
                                 <label for="ticketHolder">Email</label>
@@ -165,23 +165,28 @@
                               <span class="count-tickets"><span class="countTickets"></span><span class="count-tickets-xs"> </span> tickets selected</span>
                             </div>
                             <span class="manage-tickets">
-                              <i class="fa fa-envelope" aria-hidden="true"></i>
+                              <img class="icon icon-envelope" src="images/envelope/icon_envelope_lblue.svg">
                               <a href="#" class="resend-tickets-link" data-toggle="modal" data-target="#ticketModal">Resend ticket</a>
                             </span>
                             <span class="manage-tickets">
-                              <i class="fa fa-trash" aria-hidden="true"></i>
+                              <img class="icon icon-trash" src="images/trash/icon_trash_lblue.svg">
                               <a href="#" class="delete-tickets-link" data-toggle="modal" data-target="#ticketModal">Delete ticket</a>
                             </span>
                           </td>
                           <td class="when-tickets-selected">
                             <div class="dropdown">
-                              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Code
+                              <div class="sort-by-code">
+                                Code
+                                <span class="caret"></span>
+                              </div>
+                              <span class="name-xs">Name</span>
+                              <!--<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Code
                               <span class="caret"></span></button>
                               <span class="name-xs">Name</span>
                               <ul class="dropdown-menu">
                                 <li><a href="#">Code 1</a></li>
                                 <li><a href="#">Code 2</a></li>
-                              </ul>
+                              </ul>-->
                             </div>
                           </td>
                           <td class="when-tickets-selected hidden-xs">Name</td>
@@ -199,18 +204,18 @@
                           <td class="ticket-code" data-toggle="collapse" data-target="#ticketHolder1" class="visible-xs name-accordion">
                             <a href="#" class="ticket-code-link" data-toggle="modal" data-target="#ticketDetailModal">1DFS4D</a>
                             <span class="ticket-name visible-xs">Adams, Paul</span>
-                            <i class="fa fa-angle-down visible-xs" aria-hidden="true"></i>
+                            <img class="icon icon-arrowdown visible-xs" src="images/arrowdown/icon_arrowdown_gray_thin.svg">
                             <p id="ticketHolder1" class="collapse ticket-data-xs">
                               <span>Ticket Type:</span> <span class="ticketholder-data">General Admission</span><br>
                               <span>Delivered:</span> <span class="ticketholder-data">09 Nov 2016</span><br>
                               <span>Email:</span> <span class="ticketholder-data">mark.otto@gmail.com</span>
                             </p>
                             <span class="manage-tickets manage-tickets-xs">
-                              <i class="fa fa-envelope visible-xs" aria-hidden="true"></i>
+                              <img class="icon icon-envelope visible-xs" src="images/envelope/icon_envelope_lblue.svg">
                               <a href="#" class="resend-tickets-link visible-xs" data-toggle="modal" data-target="#ticketModal">Resend ticket</a>
                             </span>
                             <span class="manage-tickets manage-tickets-xs">
-                              <i class="fa fa-trash visible-xs" aria-hidden="true"></i>
+                              <img class="icon icon-trash visible-xs" src="images/trash/icon_trash_lblue.svg">
                               <a href="#" class="delete-tickets-link visible-xs" data-toggle="modal" data-target="#ticketModal">Delete ticket</a>
                             </span>
                           </td>
@@ -230,18 +235,18 @@
                           <td class="ticket-code" data-toggle="collapse" data-target="#ticketHolder2" class="visible-xs name-accordion">
                             <a href="#" class="ticket-code-link">1SD45D</a>
                             <span class="ticket-name visible-xs">Brown, Alexander</span>
-                            <i class="fa fa-angle-down visible-xs" aria-hidden="true"></i>
+                            <img class="icon icon-arrowdown visible-xs" src="images/arrowdown/icon_arrowdown_gray_thin.svg">
                             <p id="ticketHolder2" class="collapse ticket-data-xs">
                               <span>Ticket Type:</span> <span class="ticketholder-data">General Admission</span>
                               <span>Delivered:</span> <span class="ticketholder-data">12 Mar 2016</span>
                               <span>Email:</span> <span class="ticketholder-data">alexander.brown@gmail.com</span>
                             </p>
                             <span class="manage-tickets manage-tickets-xs">
-                              <i class="fa fa-envelope visible-xs" aria-hidden="true"></i>
+                              <img class="icon icon-envelope visible-xs" src="images/envelope/icon_envelope_lblue.svg">
                               <a href="#" class="resend-tickets-link visible-xs" data-toggle="modal" data-target="#ticketModal">Resend ticket</a>
                             </span>
                             <span class="manage-tickets manage-tickets-xs">
-                              <i class="fa fa-trash visible-xs" aria-hidden="true"></i>
+                              <img class="icon icon-trash visible-xs" src="images/trash/icon_trash_lblue.svg">
                               <a href="#" class="delete-tickets-link visible-xs" data-toggle="modal" data-target="#ticketModal">Delete ticket</a>
                             </span>
                           </td>
@@ -261,18 +266,18 @@
                           <td class="ticket-code" data-toggle="collapse" data-target="#ticketHolder3" class="visible-xs name-accordion">
                             <a href="#" class="ticket-code-link">2DSF89</a>
                             <span class="ticket-name visible-xs">Child, Aimee</span>
-                            <i class="fa fa-angle-down visible-xs" aria-hidden="true"></i>
+                            <img class="icon icon-arrowdown visible-xs" src="images/arrowdown/icon_arrowdown_gray_thin.svg">
                             <p id="ticketHolder3" class="collapse ticket-data-xs">
                               <span>Ticket Type:</span> <span class="ticketholder-data">General Admission</span>
                               <span>Delivered:</span> <span class="ticketholder-data">02 Aug 2016</span>
                               <span>Email:</span> <span class="ticketholder-data">aimee.child@yahoo.com</span>
                             </p>
                             <span class="manage-tickets manage-tickets-xs">
-                              <i class="fa fa-envelope visible-xs" aria-hidden="true"></i>
+                              <img class="icon icon-envelope visible-xs" src="images/envelope/icon_envelope_lblue.svg">
                               <a href="#" class="resend-tickets-link visible-xs" data-toggle="modal" data-target="#ticketModal">Resend ticket</a>
                             </span>
                             <span class="manage-tickets manage-tickets-xs">
-                              <i class="fa fa-trash visible-xs" aria-hidden="true"></i>
+                              <img class="icon icon-trash visible-xs" src="images/trash/icon_trash_lblue.svg">
                               <a href="#" class="delete-tickets-link visible-xs" data-toggle="modal" data-target="#ticketModal">Delete ticket</a>
                             </span>
                           </td>
@@ -292,18 +297,18 @@
                           <td class="ticket-code" data-toggle="collapse" data-target="#ticketHolder4" class="visible-xs name-accordion">
                             <a href="#" class="ticket-code-link">6ASDS4</a>
                             <span class="ticket-name visible-xs">Coombs, Stacey</span>
-                            <i class="fa fa-angle-down visible-xs" aria-hidden="true"></i>
+                            <img class="icon icon-arrowdown visible-xs" src="images/arrowdown/icon_arrowdown_gray_thin.svg">
                             <p id="ticketHolder4" class="collapse ticket-data-xs">
                               <span>Ticket Type:</span> <span class="ticketholder-data">Meet and greet</span>
                               <span>Delivered:</span> <span class="ticketholder-data">26 Dec 2016</span>
                               <span>Email:</span> <span class="ticketholder-data">stacey.coombs@gmail.com</span>
                             </p>
                             <span class="manage-tickets manage-tickets-xs">
-                              <i class="fa fa-envelope visible-xs" aria-hidden="true"></i>
+                              <img class="icon icon-envelope visible-xs" src="images/envelope/icon_envelope_lblue.svg">
                               <a href="#" class="resend-tickets-link visible-xs" data-toggle="modal" data-target="#ticketModal">Resend ticket</a>
                             </span>
                             <span class="manage-tickets manage-tickets-xs">
-                              <i class="fa fa-trash visible-xs" aria-hidden="true"></i>
+                              <img class="icon icon-trash visible-xs" src="images/trash/icon_trash_lblue.svg">
                               <a href="#" class="delete-tickets-link visible-xs" data-toggle="modal" data-target="#ticketModal">Delete ticket</a>
                             </span>
                           </td>
@@ -322,7 +327,7 @@
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <img class="icon icon-envelope" src="images/envelope/icon_envelope_gray.svg">
                             <h5 class="modal-title" id="ticketModalLabel"><span class="ticket-title"></span> <span class="countTickets hidden-xs"></span><span class="count-tickets-xs"></span> tickets?</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
@@ -365,7 +370,7 @@
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <i class="fa fa-check" aria-hidden="true"></i>
+                            <img class="icon icon-tick" src="images/tick/icon_tick_gray.svg">
                             <h5 class="modal-title" id="ticketDetailModalLabel"><span class="ticket-title">Lovebox ticket confirmation</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
@@ -397,19 +402,19 @@
                               </table>
                               <div class="manage-tickets-mod">
                                 <span class="manage-tickets2 manage-tickets2-xs">
-                                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                                  <img class="icon icon-envelope" src="images/envelope/icon_envelope_lblue.svg">
                                   <a href="#" class="resend-tickets-link" data-toggle="modal" data-target="#ticketModal">Resend ticket</a>
                                 </span>
                                 <span class="manage-tickets2 manage-tickets2-xs">
-                                  <i class="fa fa-trash" aria-hidden="true"></i>
+                                  <img class="icon icon-trash" src="images/trash/icon_trash_lblue.svg">
                                   <a href="#" class="delete-tickets-link" data-toggle="modal" data-target="#ticketModal">Delete ticket</a>
                                 </span>
                                 <span class="manage-tickets2">
-                                  <i class="fa fa-trash" aria-hidden="true"></i>
+                                  <img class="icon icon-trash" src="images/trash/icon_trash_lblue.svg">
                                   <a href="#" class="delete-tickets-link" data-toggle="modal" data-target="#ticketModal">Delete ticket</a>
                                 </span>
                                 <span class="manage-tickets2">
-                                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                                  <img class="icon icon-envelope" src="images/envelope/icon_envelope_lblue.svg">
                                   <a href="#" class="resend-tickets-link" data-toggle="modal" data-target="#ticketModal">Resend ticket</a>
                                 </span>
                               </div>

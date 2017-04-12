@@ -161,13 +161,16 @@
 				}
 
 				.del-ticket-type {
-				  background-color: #ffffff;
-				  border: solid 1px #d3dbe2;
-				  border-radius: 3px;
-				  color: #0078bd;
-				  font-size: 20px;
-				  height: 40px;
+					background-color: #ffffff;
+					border: solid 1px #d3dbe2;
+					border-radius: 3px;
+					color: #0078bd;
+					font-size: 20px;
+					height: 40px;
 					width: 35px;
+					.icon-trash {
+						margin-bottom: 3px;
+					}
 				}
 			}
 		}
@@ -179,6 +182,7 @@
 			}
 
 			.content-left-md {
+				padding: 16px 15px 19px 15px;
 				background-color: #cae9f7;
 				@include box-shadow(0 3px 3px 0 rgba(0, 0, 0, 0.1));
 				float: left;
@@ -186,6 +190,7 @@
 
 				@include breakpoint(768px) {
 					margin-top: 20px;
+					padding: 22px 22px 27px 22px;
 				}
 
 				.content-header {
@@ -196,25 +201,18 @@
 					font-weight: bold;
 					line-height: normal;
 					letter-spacing: normal;
-					margin-left: 0px;
-					padding-left: 11px;
+					margin: 0;
+					padding-left: 7px;
 				}
 
 				.content-desc {
-					padding: 0px 15px;
+					margin: 0;
+					padding: 0;
 					font-size: 15px;
-				  line-height: 1.6;
-				  letter-spacing: normal;
-				  text-align: left;
-				  color: #1a1a1a;
-				}
-
-				.fa-flag {
-					color: #0078bd;
-					margin-left: 15px;
-					position: relative;
-					font-size: 27px;
-					top: 2px;
+					line-height: 1.6;
+					letter-spacing: normal;
+					text-align: left;
+					color: #1a1a1a;
 				}
 			}
 		}

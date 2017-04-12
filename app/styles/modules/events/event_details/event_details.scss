@@ -1,20 +1,20 @@
 /*Event details Page*/
 
-  .event-summary2::-webkit-scrollbar {
-      width:  10px;
-      height: 10px;
-  }
+.event-summary2::-webkit-scrollbar {
+	width:  10px;
+	height: 10px;
+}
 
-  .event-summary2::-webkit-scrollbar-thumb {
-      background: #cacaca;
-      border-radius: 100px;
-      margin: 6px;
-      width: 10px;
-  }
+.event-summary2::-webkit-scrollbar-thumb {
+	background: #cacaca;
+	border-radius: 100px;
+	margin: 6px;
+	width: 10px;
+}
 
-  .event-summary2::-webkit-scrollbar-track {
-      background: transparent;
- 	}
+.event-summary2::-webkit-scrollbar-track {
+	background: transparent;
+}
 
 .event-detail-scr {
 
@@ -102,9 +102,10 @@
 				  }
 				}
 
-				.download-icon {
+				.icon-download {
 					display: inline-block;
 					margin-left: 40px;
+					margin-bottom: 6px;
 
 					@include breakpoint(768px) {
 						display: none;
@@ -144,17 +145,15 @@
 				    	position: relative;
 				    	width: auto;
 
-							@include breakpoint(768px) {
+						@include breakpoint(768px) {
 				    		margin: 0px 0px 31px;
 				    		width: 50%;
-							}
+						}
 
-				    	.fa-search {
-				    		bottom: 30%;
-				    		color: #95a7b7;
-				    		font-size: 16px;
-				    		left: 7px;
+				    	.icon {
 				    		position: absolute;
+				    		left: 7px;
+							top: 9px;
 				    	}
 
 				    	input {
@@ -215,7 +214,7 @@
 				    	padding-left: 15px;
 				    	text-align: left;
 
-							.download-icon {
+							.icon-download {
 								display: none;
 								margin-left: 40px;
 
@@ -240,41 +239,29 @@
 				    		margin-right: 18px;
 				    	}
 
-				    	img {
-				    		height: 18px;
-				    		margin-bottom: 4px;
-				    	}
-
-				    	.download-icon {
-				    		height: 15px;
+				    	.icon-download {
+				    		width: 20px;
 				    		margin-right: 2px;
-				    		width: 18px;
+							margin-bottom: 6px;
 				    	}
 
-				    	.fa-download {
-				    		color: #95A7B7;
-				    		font-size: 18px;
-				    		line-height: normal;
-				    		position: relative;
-				    		top: 2px;
-				    	}
-
-				    	.fa-plus {
-				    		color: #95A7B7;
-				    		font-size: 18px;
-				    		line-height: normal;
-				    		position: relative;
-				    		top: 1px;
-				    	}
+						.icon-plus {
+							margin-bottom: 4px;
+						}
 				    }
 
 				    .table {
 				    	margin-bottom: 6px;
 
 				    	thead {
+							@include breakpoint(768px) {
+								tr {
+									height: 42px;
+								}
+							}
 				    		td {
-									border-top: 0px;
-									color: #31373d;
+								border-top: 0px;
+								color: #31373d;
 				    			padding-top: 0px;
 				    			padding-bottom: 9.9px;
 				    			vertical-align: middle;
@@ -296,10 +283,9 @@
 
 				    	tbody {
 			    			tr {
-		    					.fa-angle-down {
+		    					.icon-arrowdown {
 		    						display: inline-block !important;
 		    						float: right;
-		    						font-size: 17px;
 
 		    						@include breakpoint(768px) {
 		    							float: none;
@@ -319,7 +305,7 @@
 		    						}
 		    					}
 
-		    					.fa-angle-down {
+		    					.icon-arrowdown {
 		    						@include breakpoint(768px) {
 		    							display: none !important;
 		    						}
@@ -349,28 +335,6 @@
 				    				cursor: pointer;
 				    			}
 			    			}
-
-	    					.ticket-list {
-	    						.ticket-code {
-		    						.manage-tickets {
-			    						.fa-envelope {
-			    							display: inline-block !important;
-			    						}
-
-			    						.fa-trash {
-			    							display: inline-block !important;
-			    						}
-
-			    						.resend-tickets-link {
-			    							display: inline-block !important;	
-			    						}
-
-			    						.delete-tickets-link {
-			    							display: inline-block !important;	
-			    						}
-			    					}
-			    				}
-	    					}
 				    	}
 
 				    	tr {
@@ -387,7 +351,7 @@
 				    		font-size: 15px;
 				    		letter-spacing: normal;
 				    		line-height: normal;
-				    		padding: 24px 8px 25px 16px;
+				    		padding: 24px 16px 25px 16px;
 
 				    		@include breakpoint(768px) {
 				    			padding: 24px 8px 25px 8px;
@@ -423,11 +387,10 @@
 							    width:16px;
 			    			}
 
-			    			.fa-check {
-			    				color: #0078bd;
-							    bottom: 2px;
-							    font-size: 14px;
+			    			.icon-tick {
 							    position: relative;
+								left: 2px;
+								bottom: 3px;
 			    			}
 			    		}
 
@@ -436,12 +399,14 @@
 				    	}
 
 				    	.dropdown {
-				    		.btn-default {
+							.sort-by-code {
+								display: inline-block;
 				    			border: 0px;
-				    			height: 30.1px;
-				    			padding-left: 0px;
+								padding: 6px 0;
+								cursor: pointer;
 				    			min-width: 77px;
 				    			text-align: left;
+								font-size: 15px;
 
 				    			&:hover {
 				    				background-color: transparent;
@@ -469,7 +434,7 @@
 				    	.drop-code {
 			    			border: 1px solid #d3dbe2;
 			    			border-radius:(3px);
-			    			height: 30.1px;
+			    			height: 30px;
 			    			padding: 6px 6px 6px 7px;
 			    			width: 45px;
 				    		
@@ -527,20 +492,6 @@
 			    		}
 		    		}
 
-	    			.fa-envelope {
-				    	color: #95A7B7;
-	    				bottom: 1px;
-	    				margin-right: 3px;
-	    				width: 17px;
-
-	    			}
-
-	    			.fa-trash {
-				    	color: #95A7B7;
-				    	font-size: 19px;
-	    				margin-right: 3px;
-	    			}
-
 			    	.modal {
 						@include breakpoint(768px) {
 							text-align: center;
@@ -549,7 +500,6 @@
 								display: inline-block;
 								height: 100%;
 								vertical-align: middle;
-								margin-right: -4px;
 							}
 						}
 
@@ -566,21 +516,6 @@
 								text-align: left;
 								vertical-align: middle;
 				    		}
-
-			    			.modal-header {
-								padding: 18px 10px 14px 10px;
-			    				text-align: left;
-								@include breakpoint(768px) {
-			    					padding: 18px 18px 18px 22px;
-								}
-			    			}
-			    		}
-
-			    		.fa-check {
-			    			color: #95A7B7;
-			    			font-size: 22px;
-			    			position: relative;
-			    			margin-right: 5px;
 			    		}
 
 			    		.modal-title {
@@ -700,14 +635,6 @@
 			    		.modal-content {
 			    			@include border-radius(0px);
 
-			    			.fa-check {
-			    				vertical-align: top;
-			    			}
-
-			    			.modal-header {
-			    				padding-bottom: 14px;
-			    			}
-
 			    			.modal-title {
 			    				display: inline-block;
 			    				width: 83%;
@@ -749,39 +676,17 @@
 
 		    						.manage-tickets2 {
 		    							display: none;
+										position: relative;
 
 		    							@include breakpoint(768px) {
 		    								display: block;
-		    								margin: 4px 0 14px;
+		    								margin: 4px 0 10px;
 		    							}
-
-			    						.fa-envelope {
-			    							display: inline-block !important;
-			    							margin-right: 0px;
-											width: 17px;
-											position: relative;
-											top: -1px;
-			    						}
-
-			    						.fa-trash {
-			    							display: inline-block !important;
-			    							margin-right: 0px;
-											width: 17px;
-											position: relative;
-											top: 1px;
-			    						}
-
-			    						.resend-tickets-link {
-			    							display: inline-block !important;	
-			    						}
-
-			    						.delete-tickets-link {
-			    							display: inline-block !important;	
-			    						}
 			    					}
 
 						    		.manage-tickets2-xs {
 						    			display: inline-block;
+										position: relative;
 										margin-right: 20px;
 						    			
 		    							@include breakpoint(768px) {
@@ -804,11 +709,11 @@
 									//@include scrollbars(.5em, slategray);
 
 		    					p {
-									  color: #1a1a1a;
-		    						font-family: HelveticaNeue, Arial, sans-serif;
-		    						font-size: 15px;
-									  letter-spacing: normal;
-									  line-height: 1.6;
+									color: #1a1a1a;
+									font-family: HelveticaNeue, Arial, sans-serif;
+									font-size: 15px;
+									letter-spacing: normal;
+									line-height: 1.6;
 		    					}
 		    				}
 
@@ -885,12 +790,11 @@
 		    					@include appearance(none);
 		    				}
 
-		    				.fa-angle-down {
-		    					color: #c5cfd7;
-		    					font-size: 20px;
+		    				.icon-arrowdown {
 		    					position: absolute;
 		    					right: 10px;
-		    					top: 9px;
+								top: 50%;
+								transform: translateY(-50%);
 		    				}
 		    			}
 
@@ -903,14 +807,6 @@
 								  border: solid 1px #d3dbe2;
 								  height: 36px;
 		    					width: 36px;
-		    				}
-
-		    				.fa-minus {
-		    					color: #c5cfd7;
-		    				}
-
-		    				.fa-plus {
-		    					color: #0078bd;
 		    				}
 
 			    			.form-qty {
@@ -937,6 +833,37 @@
 		    		}
 
 					}
+			}
+		}
+
+		.icon-envelope,
+		.icon-trash {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			transform: translate(-50%, -50%);
+		}
+		.resend-tickets-link,
+		.delete-tickets-link {
+			margin-left: 25px;
+			display: inline-block !important;
+		}
+
+		.modal-header {
+			padding: 18px 10px 18px 44px;
+			@include breakpoint(768px) {
+				padding: 18px 22px 18px 50px;
+			}
+			position: relative;
+			padding-left: 50px !important;
+			.icon {
+				position: absolute;
+				left: 28px;
+				top: 28px;
+				transform: translate(-50%, -50%);
+			}
+			.close {
+				margin-top: 0;
 			}
 		}
 

@@ -38,7 +38,7 @@ $(document).ready(function () {
     	//check all tickets
     	if ($(this).is(':checked')) {
   			checkBoxes.prop('checked', true);
-			$(this).siblings('label').html('<i class="fa fa-check" aria-hidden="true"></i>');
+			$(this).siblings('label').html('<img class="icon icon-tick" src="images/tick/icon_tick_blue_small.svg">');
 		}
 		else {
 			checkBoxes.prop('checked', false);
@@ -50,7 +50,7 @@ $(document).ready(function () {
 	    checkBoxes.each(function() {
     		if ($(this).is(':checked')) {
   				checkBoxes.closest('tr').addClass('tickets-selected');
-  				$('.select-label').html('<i class="fa fa-check" style="display:inline" aria-hidden="true"></i>');
+  				$('.select-label').html('<img class="icon icon-tick" src="images/tick/icon_tick_blue_small.svg">');
   			}
   			else {
   				checkBoxes.closest('tr').removeClass('tickets-selected');	
@@ -66,9 +66,9 @@ $(document).ready(function () {
 	    totalTickets = $('.select-ticket:checked').length;
 		//select head checkbox
 		if ($(this).is(':checked')) {
-			$(this).next('.select-label').html('<i class="fa fa-check" style="display:inline" aria-hidden="true"></i>');
+			$(this).next('.select-label').html('<img class="icon icon-tick" src="images/tick/icon_tick_blue_small.svg">');
 			$('#select-ticket-all').prop('checked', true);
-			$('#select-ticket-all').siblings('label').html('<i class="fa fa-check" aria-hidden="true"></i>');
+			$('#select-ticket-all').siblings('label').html('<img class="icon icon-tick" src="images/tick/icon_tick_blue_small.svg">');
 		}
 		else {
 			$(this).next('.select-label').html('');	
@@ -92,6 +92,9 @@ $(document).ready(function () {
 		$('#ticketDetailModal').addClass('fade');
 		$('.btn-ticket, .done-message, .done-image').hide();
 		$('.modal .modal-body table, .modal .modal-footer').show();
+		$('#ticketModal .modal-header .icon').removeClass('icon-trash');
+		$('#ticketModal .modal-header .icon').addClass('icon-envelope');
+		$('#ticketModal .modal-header .icon').attr('src', 'images/envelope/icon_envelope_gray.svg');
 		$('#ticketModal .ticket-title').html('Resend ');
 		$('#ticketModal .modal-content').addClass('model-content-custom');
 		$('#ticketModal').addClass('modal-custom');
@@ -108,6 +111,9 @@ $(document).ready(function () {
 		$('#ticketDetailModal').addClass('fade');
 		$('.btn-ticket, .done-message, .done-image').hide();
 		$('.modal .modal-body table, .modal .modal-footer').show();
+		$('#ticketModal .modal-header .icon').removeClass('icon-envelope');
+		$('#ticketModal .modal-header .icon').addClass('icon-trash');
+		$('#ticketModal .modal-header .icon').attr('src', 'images/trash/icon_trash_gray.svg');
 		$('#ticketModal .ticket-title').html('Delete ');
 		$('#ticketModal .modal-content').addClass('model-content-custom');
 		$('#ticketModal').addClass('modal-custom');
@@ -124,10 +130,10 @@ $(document).ready(function () {
 		$('#ticketModal .modal-body table').hide();
 		$('#ticketModal .done-message').hide();
 		$('#ticketModal .done-image').hide();
-		$('#ticketModal .modal .modal-footer').hide();
+		$('#ticketModal .modal-footer').hide();
 		$('#ticketModal .form-group').hide();
 
-		modalText += '<img src="images/done.png" class="done-image">'
+		modalText += '<img src="images/icon_confirmation.svg" class="done-image">'
 
 		if (ticketID=='resendTicketBtn') {
 			modalText += '<div class="done-message">Tickets Resent!</div>'
@@ -148,6 +154,49 @@ $(document).ready(function () {
 		$(this).find('.manage-tickets-xs').toggle();
 	});
 
+	$('.add-ticket-type').click(function() {
+		var markup = '<tr><td><input type="text" name="" value="" class="form-control" placeholder="VIP"></td><td><input type="text" name="" value="" class="form-control ticket-type-qty" placeholder="0"></td><td><input type="text" name="" value="" class="form-control ticket-type-price" placeholder="£0.00"></td><td><button class="del-ticket-type"><i class="fa fa-trash" aria-hidden="true"></i></button></td></tr>';
+		$('table#addTicketType tbody').append(markup);
+		$('.del-ticket-type').click(function(event) {
+			$(event.target).parents('tr').remove();
+		});
+	});
+
+	$('.sort-by-code').click(function(event) {
+		var table = $(event.target).parents('table')[0];
+
+		var ascending = (table.getAttribute('sort-by-code') != 'descending');
+		ascending = !ascending;
+		sortTable(table, ascending);
+
+		table.setAttribute('sort-by-code', ascending ? 'ascending' : 'descending');
+
+		var caret = $(event.target).children('span')[0];
+		$(caret).css('transform', ascending ? '' : 'rotate(180deg)');
+	});
+
+	function sortTable(table, ascending = true) {
+		var rows, switching, i, x, y, shouldSwitch;
+		switching = true;
+		while (switching) {
+			switching = false;
+			rows = table.getElementsByTagName('TR');
+			for (i = 1; i < (rows.length - 1); i++) {
+				shouldSwitch = false;
+				x = rows[i].getElementsByTagName('TD')[1].getElementsByTagName('a')[0];
+				y = rows[i + 1].getElementsByTagName('TD')[1].getElementsByTagName('a')[0];
+				if (ascending && x.text.toLowerCase() > y.text.toLowerCase()
+					|| !ascending && x.text.toLowerCase() < y.text.toLowerCase()) {
+					shouldSwitch= true;
+					break;
+				}
+			}
+			if (shouldSwitch) {
+				rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+				switching = true;
+			}
+		}
+	}
 	//increment / decrement button
 	$('.increment-qty').on('click',function() {
 		ticketTotal = parseInt($('#ticketQty').val())+1;
