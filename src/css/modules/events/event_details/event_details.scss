@@ -42,6 +42,9 @@
 
 				.event-thumb {
 					min-width: 136px;
+					@include breakpoint(768px) {
+						width: 269px;
+					}
 				}
 
 				.event-detail {
@@ -52,10 +55,10 @@
 					}
 
 					.event-tickets-sold {
-						color: #5c951e;
+						color: $color-sold-tickets;
 						font-size: 14px;;
 						font-weight: bold;
-						line-height: 1.57;
+						line-height: 1.5;
 						margin: 0px;
 						width: 150px;
 					}
@@ -64,12 +67,12 @@
 						color: #1a1a1a;
 						font-size: 16px;
 						font-weight: bold;
-						line-height: 1.38;
+						line-height: 1.5;
 						margin: 4px 0px 0px;
 					}
 				}
 
-				.btn-default {
+				button {
 					margin-right: 6px;
 					margin-bottom: 7px;
 				}
@@ -92,34 +95,30 @@
 				.active {
 					a {
 						border: 0px;
-				    border-right: 1px solid #ddd;
-				    border-radius: 0px;
-					  color: #31373d;
-					  font-family: HelveticaNeue, Arial, sans-serif;
-					  font-size: 15px;
-					  height: 47px;
-					  padding: 10px 22px;
-				  }
-				}
-
-				.icon-download {
-					display: inline-block;
-					margin-left: 40px;
-					margin-bottom: 6px;
-
-					@include breakpoint(768px) {
-						display: none;
+						border-right: 1px solid #ddd;
+						border-radius: 0px;
+						color: #31373d;
+						font-family: HelveticaNeue, Arial, sans-serif;
+						font-size: 15px;
+						height: 47px;
+						padding: 10px 22px;
 					}
 				}
 
 				.download-doorlist {
 					display: inline-block;
 					line-height: normal;
-					margin-left: 2px;
+					margin-left: 40px;
 					padding: 15px 0px 13px 0px;
 
 					@include breakpoint(768px) {
 						display: none;
+					}
+
+					.icon-download {
+						display: inline-block;
+						margin-right: 6px;
+						margin-top: -6px;
 					}
 				}
 			}
@@ -209,7 +208,7 @@
 			    	}
 
 				    .search-links {
-				    	height: 36px;
+				    	height: 44px;
 				    	padding-top: 6px;
 				    	padding-left: 15px;
 				    	text-align: left;
@@ -229,10 +228,10 @@
 							}
 
 				    	a {
-								  font-family: HelveticaNeue, Arial, sans-serif;
-								  font-size: 15px;
-								  text-align: left;
-								  color: #0078bd;
+							font-family: HelveticaNeue, Arial, sans-serif;
+							font-size: 15px;
+							text-align: left;
+							color: #0078bd;
 				    	}
 
 				    	.download-doorlist {
@@ -240,13 +239,16 @@
 				    	}
 
 				    	.icon-download {
-				    		width: 20px;
-				    		margin-right: 2px;
+				    		margin-right: 6px;
 							margin-bottom: 6px;
 				    	}
 
+						.icon-minus {
+							margin-bottom: 2px;
+						}
+
 						.icon-plus {
-							margin-bottom: 4px;
+							margin-bottom: 3px;
 						}
 				    }
 
@@ -360,14 +362,6 @@
 				    		&:first-child {
 				    			padding-left: 7px;
 				    		}
-
-				    		a {
-				    			color: #0078bd;
-
-				    			&:hover {
-				    				text-decoration: none;
-				    			}
-				    		}
 				    	}
 
 			    		.event-checkbox, .event-checkbox-header {
@@ -435,16 +429,18 @@
 			    			border: 1px solid #d3dbe2;
 			    			border-radius:(3px);
 			    			height: 30px;
-			    			padding: 6px 6px 6px 7px;
+			    			padding: 6px 0px 6px 7px;
 			    			width: 45px;
 				    		
 				    		.caret {
 				    			color: #0078bd;
+								margin-right: 6px;
 				    			margin-bottom: 7px;
 				    		}
 
 				    		.count-tickets {
 								margin-left: 7px;
+								margin-right: 6px;
 						    	bottom: 1px;
 						    	color: #798c9c;
 				    			display: none;
@@ -533,10 +529,7 @@
 								padding: 16px 22px 22px 22px;
 							}
 
-			    			.btn-primary {
-			    				background-color: #ff5d5d;
-			    				border-color: #ff5d5d;
-			    				@include border-radius(3px);
+			    			.btn-ticket {
 			    				margin-left: 7px;
 			    			}
 			    		}
@@ -802,11 +795,12 @@
 		    				margin-bottom: 17px;
 
 		    				button {
-								  border-radius: 3px;
-								  background-color: #fafbfc;
-								  border: solid 1px #d3dbe2;
-								  height: 36px;
-		    					width: 36px;
+								border-radius: 3px;
+								background-color: #fafbfc;
+								border: solid 1px #d3dbe2;
+								height: 36px;
+								width: 36px;
+								vertical-align: top;
 		    				}
 
 			    			.form-qty {

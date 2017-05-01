@@ -54,7 +54,7 @@
 			right: 15px;
 		}
 
-		.btn-revert {
+		.btn-white-bg {
 			text-align: left;
 		}
 
@@ -71,14 +71,13 @@
 				background-color: #ffffff;
 				@include box-shadow(0 3px 3px 0 rgba(0, 0, 0, 0.1));
 				float: left;
-				padding: 0px 15px 15px;
+				padding: 0px 15px 28px;
 				margin: 0px 0px 15px;
 				position: relative;
 				width: 100%;
 
 				@include breakpoint(768px) {
 					margin-top: 20px;
-					padding: 0px 15px 15px;
 				}
 
 				.upload-img {
@@ -98,6 +97,7 @@
 
 				.note-editor {
 					min-height: 220px;
+					margin: 0;
 				}
 
 				.note-editable {

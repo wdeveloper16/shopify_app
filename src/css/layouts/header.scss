@@ -13,6 +13,9 @@ header {
     }
     .header-menu-title {
       margin-right: 7px;
+      a {
+        color: inherit !important;
+      }
     }
     .header-slash {
       margin-right: 1px;

@@ -5,14 +5,26 @@ body {
   font-family: $font-family-helvetica-neue;
 }
 
+a {
+  cursor: pointer;
+  color: $color-button-blue;
+  &:hover {
+    color: $color-button-blue-hover;
+  }
+}
+
 .page {
   min-height: 100vh;
   background-color: $content-background-color;
 }
 
 .btn-no-bg,
+.btn-white-bg,
 .btn-blue-bg,
-.header-toolbar-button {
+.btn-red-bg,
+.header-toolbar-button,
+.btn-nav-toggle {
+  @extend .btn;
   font-size: 16px;
   border-radius: 3px;
   padding: 0 16px;
@@ -25,42 +37,29 @@ body {
   background: transparent;
 }
 
+.btn-white-bg {
+  border: solid 1px #d3dbe2;
+  background-color: white;
+  color: $color-button-blue !important;
+  &:hover {
+    background-color:#f5f6f7;
+  }
+}
+
 .btn-blue-bg {
   background-color: $color-button-blue;
-  color: $color-white;
-  font-size: 16px !important;
-  padding: 0px 16px !important;
-  height: 36px !important;
-  
+  color: $color-white !important;
   &:hover {
-    background-color: #0078e0;
-    color: $color-white;
+    background-color: $color-button-blue-hover;
   }
 }
 
-.btn-revert {
-  @include border-radius(3px);
-  border: 1px solid #d3dbe2;
-  background-color: #ffffff;
-  color: #0078bd;
-  font-size: 16px !important;
-  line-height: normal;
-  letter-spacing: normal;
-  padding: 0px 16px !important;
-  height: 36px !important;
-
-
+.btn-red-bg {
+  background-color: $color-button-red;
+  color: $color-white !important;
   &:hover {
-    color: #0078bd;
-    background-color: #fafafa;
-    border-color: #d3dbe2;
+    background-color: $color-button-red-hover;
   }
-}
-
-.btn-primary {
-  font-size: 16px !important;
-  padding: 0px 16px !important;
-  height: 36px !important;
 }
 
 .float-right {
