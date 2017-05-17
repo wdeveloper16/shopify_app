@@ -145,7 +145,7 @@
 				    	width: auto;
 
 						@include breakpoint(768px) {
-				    		margin: 0px 0px 31px;
+				    		margin: 0px 0px 21px;
 				    		width: 50%;
 						}
 
@@ -163,7 +163,7 @@
 				    		font-size: 16px;
 				    		height: 36px;
 				    		min-width: 290px;
-				    		padding: 9px 0px 9px 37px;
+				    		padding: 0px 0px 0px 37px;
 				    		width: 100%;
 				    	}
 
@@ -179,7 +179,7 @@
 
 			    		li {
 			    			a {
-			    				font-size: 16px;
+								font-size: 16px;
 								height: 39px;
 			    				letter-spacing: normal;
 			    				line-height: normal;
@@ -200,15 +200,20 @@
 
 			    		.active {
 			    			a {
-			    				background: #ffffff;
+			    				background: white;
 			    				border: 1px solid #d3dbe2;
-			    				color: #0078bd;
+								cursor: pointer;
+								color: $color-button-blue;
+								&:hover {
+									color: $color-button-blue-hover;
+									text-decoration: underline;
+								}
 			    			}
 			    		}
 			    	}
 
 				    .search-links {
-				    	height: 44px;
+				    	height: 36px;
 				    	padding-top: 6px;
 				    	padding-left: 15px;
 				    	text-align: left;
@@ -256,17 +261,27 @@
 				    	margin-bottom: 6px;
 
 				    	thead {
-							@include breakpoint(768px) {
-								tr {
-									height: 42px;
+							tr {
+								height: 46px;
+								@include breakpoint(768px) {
+									height: 52px;
 								}
 							}
 				    		td {
 								border-top: 0px;
 								color: #31373d;
-				    			padding-top: 0px;
-				    			padding-bottom: 9.9px;
+								padding-top: 0px;
+				    			padding-bottom: 0px;
 				    			vertical-align: middle;
+								@include breakpoint(768px) {
+									padding: 0 8px;
+								}
+
+								&.when-tickets-selected:hover {
+									cursor: pointer;
+									color: $color-button-blue;
+									background-color: #f0f9fc;
+								}
 
 					    		&:first-child {
 					    			padding-left: 0px;
@@ -392,38 +407,30 @@
 				    		color: #707070;
 				    	}
 
-				    	.dropdown {
-							.sort-by-code {
-								display: inline-block;
-				    			border: 0px;
-								padding: 6px 0;
-								cursor: pointer;
-				    			min-width: 77px;
-				    			text-align: left;
-								font-size: 15px;
+						.sort {
+							display: inline-block;
+							border: 0px;
+							padding: 6px 0;
+							cursor: pointer;
+							min-width: 77px;
+							text-align: left;
+							font-size: 15px;
 
-				    			&:hover {
-				    				background-color: transparent;
-				    			}
+							&:hover {
+								background-color: transparent;
+							}
 
-					    		@include breakpoint(768px) {
-					    		}
+							&.descending .caret {
+								transform: rotate(180deg);
+							}
 
-				    			.caret {
-				    				margin-bottom: 4px;
-				    			}
-				    		}
+							@include breakpoint(768px) {
+							}
 
-				    		.select-code {
-				    			background-color: transparent;
-				    			@include border-radius(3px);
-				    			border: 1px solid #d3dbe2;
-				    			display: inline-block;
-				    			height: 17.2px;
-				    			margin: 0px;
-				    			width: 16px;
-				    		}
-				    	}
+							.caret {
+								margin-bottom: 4px;
+							}
+						}
 
 				    	.drop-code {
 			    			border: 1px solid #d3dbe2;
@@ -431,7 +438,9 @@
 			    			height: 30px;
 			    			padding: 6px 0px 6px 7px;
 			    			width: 45px;
-				    		
+				    		&:hover {
+								background-color: #f6f8f9;
+							}
 				    		.caret {
 				    			color: #0078bd;
 								margin-right: 6px;
@@ -877,4 +886,13 @@
 			}
 		}
 	}
+}
+
+.popover {
+	color: white;
+	background-color: #333333;
+}
+
+.popover.right .arrow:after {
+    border-right-color: #333333;
 }

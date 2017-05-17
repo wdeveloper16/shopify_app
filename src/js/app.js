@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    $('[data-toggle="popover"]').popover();
+
 	function countTickets() {
 		//count tickets selected
 		var totalTickets;
@@ -16,8 +18,7 @@ $(document).ready(function () {
 
 			$('.drop-code').css({
 				'width' : 'auto',
-				'display' : 'inline-block',
-				'background-color' : '#fafbfc'
+				'display' : 'inline-block'
 			});
 
 			$('.count-tickets, .manage-tickets').css({
@@ -162,6 +163,61 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.sort').click(function(event) {
+		var $ctrl = $(event.target);
+		var descending = $ctrl.hasClass('descending');
+
+		var $table = $($ctrl.parents('table')[0]);
+		$table.find('.sort').removeClass('descending');
+
+		var $td = $($ctrl.parents('td')[0]);
+		var column = $td.index();
+
+		if (!descending)
+			$ctrl.addClass('descending');
+
+		var getValue = function (row) {
+			var td = row.getElementsByTagName('td')[column];
+			var element = td;
+			switch ($ctrl.attr('value')) {
+				case 'code':
+					element = td.getElementsByTagName('a')[0];
+					break;
+				case 'name':
+					element = td.getElementsByTagName('span')[0];
+					break;
+				default:
+			}
+
+			return element.innerHTML;
+		};
+
+		sortTable($table.get(0), !descending, getValue);
+	});
+
+	function sortTable(table, ascending, getValue) {
+		var rows, switching, i, x, y, shouldSwitch;
+		switching = true;
+		while (switching) {
+			switching = false;
+			rows = table.getElementsByTagName('TR');
+			for (i = 1; i < (rows.length - 1); i++) {
+				shouldSwitch = false;
+				x = getValue(rows[i]);//rows[i].getElementsByTagName('TD')[1].getElementsByTagName('a')[0];
+				y = getValue(rows[i+1]);//rows[i + 1].getElementsByTagName('TD')[1].getElementsByTagName('a')[0];
+				if (ascending && x.toLowerCase() > y.toLowerCase()
+					|| !ascending && x.toLowerCase() < y.toLowerCase()) {
+					shouldSwitch= true;
+					break;
+				}
+			}
+			if (shouldSwitch) {
+				rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+				switching = true;
+			}
+		}
+	}
+/*
 	$('.sort-by-code').click(function(event) {
 		var table = $(event.target).parents('table')[0];
 
@@ -196,7 +252,7 @@ $(document).ready(function () {
 				switching = true;
 			}
 		}
-	}
+	}*/
 	//increment / decrement button
 	$('.increment-qty').on('click',function() {
 		ticketTotal = parseInt($('#ticketQty').val())+1;

@@ -21,8 +21,8 @@
             </div>
             <div class="header-right-nav no-padding pull-right text-right">
                 <div class="header-toolbar">
-                    <button type="button" class="header-toolbar-button">Dashboard</button>
-                    <button type="button" class="header-toolbar-button">Help</button>
+                    <button type="button" class="btn-white-bg">Dashboard</button>
+                    <button type="button" class="btn-white-bg">Help</button>
                 </div>
                 <button type="button" class="btn-blue-bg">Create event</button>
             </div>
@@ -36,8 +36,8 @@
             </div>
             <div class="col-xs-12 header-right-nav">
                 <div class="header-toolbar">
-                    <button type="button" class="header-toolbar-button">Dashboard</button>
-                    <button type="button" class="header-toolbar-button">Help</button>
+                    <button type="button" class="btn-white-bg">Dashboard</button>
+                    <button type="button" class="btn-white-bg">Help</button>
                 </div>
                 <button type="button" class="btn-blue-bg">Create event</button>
             </div>
@@ -147,7 +147,7 @@
                       <thead>
                         <tr>
                           <td class="event-checkbox-header hidden-xs">
-                            <div class="dropdown drop-code">
+                            <div class="dropdown drop-code" data-toggle="popover" data-trigger="hover" data-content="Select all products">
                               <input type="checkbox" name="select-ticket-all" id="select-ticket-all">
                               <label for="select-ticket-all" class="select-label-all"></label>
                               <span class="caret" ></span>
@@ -167,18 +167,41 @@
                             </span>
                           </td>
                           <td class="when-tickets-selected">
-                            <div class="dropdown">
-                              <div class="sort-by-code">
+                            <div>
+                              <div class="sort" value="code">
                                 Code
                                 <span class="caret"></span>
                               </div>
-                              <span class="name-xs">Name</span>
+                              <div class="sort name-xs" value="name">
+                                Name
+                                <span class="caret"></span>
+                              </div>
                             </div>
                           </td>
-                          <td class="when-tickets-selected hidden-xs">Name</td>
-                          <td class="when-tickets-selected hidden-xs">Email Address</td>
-                          <td class="when-tickets-selected hidden-xs">Delivered</td>
-                          <td class="when-tickets-selected hidden-xs">Ticket Type</td>
+                          <td class="when-tickets-selected hidden-xs">
+                            <div class="sort" value="name">
+                              Name
+                              <span class="caret"></span>
+                            </div>
+                          </td>
+                          <td class="when-tickets-selected hidden-xs">
+                            <div class="sort" value="email">
+                              Email Address
+                              <span class="caret"></span>
+                            </div>
+                          </td>
+                          <td class="when-tickets-selected hidden-xs">
+                            <div class="sort" value="date">
+                              Delivered
+                              <span class="caret"></span>
+                            </div>
+                          </td>
+                          <td class="when-tickets-selected hidden-xs">
+                            <div class="sort" value="type">
+                              Ticket Type
+                              <span class="caret"></span>
+                            </div>
+                          </td>
                         </tr>
                       </thead>
                       <tbody>
