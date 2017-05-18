@@ -72,7 +72,7 @@
 				@include box-shadow(0 3px 3px 0 rgba(0, 0, 0, 0.1));
 				float: left;
 				padding: 0px 15px 28px;
-				margin: 0px 0px 15px;
+				margin: 15px 0 0 0;
 				position: relative;
 				width: 100%;
 
@@ -186,6 +186,7 @@
 				background-color: #cae9f7;
 				@include box-shadow(0 3px 3px 0 rgba(0, 0, 0, 0.1));
 				float: left;
+				margin-top: 15px;
 				margin-bottom: 22px;
 
 				@include breakpoint(768px) {
@@ -219,13 +220,11 @@
 
 		.content-buttons {
 			padding: 0px 15px;
-			margin-bottom: 23px;
+			margin-bottom: 25px;
 
 			@include breakpoint(768px) {
-				margin-bottom: 25px;
-				margin-top: 5px;
-				padding-right: 0px;
-				padding-left: 0px;
+				margin-top: 28px;
+				padding: 0;
 			}
 		}
 	}

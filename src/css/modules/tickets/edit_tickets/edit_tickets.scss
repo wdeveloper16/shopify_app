@@ -48,27 +48,25 @@
 		}
 
 		.content-right {
-			background-color: #ffffff;
-			@include box-shadow(0 3px 3px 0 rgba(0, 0, 0, 0.1));
+			background-color: transparent;
+			padding: 0;
 
 			@include breakpoint(768px) {
 				background-color: transparent;
 				@include box-shadow(none);
-				padding: 0;
 			}
 
 			.content-right-md {
-				background-color: transparent;
-				@include box-shadow(none);
+				background-color: #ffffff;
+				@include box-shadow(0 3px 3px 0 rgba(0, 0, 0, 0.1));
 				float: left;
-				margin: 10px 0px 0px;
-				padding: 0px 0px 15px;
+				padding: 0px 15px 28px;
+				margin: 15px 0 0 0;
+				position: relative;
+				width: 100%;
 
 				@include breakpoint(768px) {
-					background-color: #ffffff;
-					@include box-shadow(0 3px 3px 0 rgba(0, 0, 0, 0.1));
 					margin-top: 20px;
-					padding: 0px 15px 15px;
 				}
 
 				.form-control {
@@ -120,7 +118,8 @@
 				background-color: #f5f6f7;
 				@include box-shadow(0 3px 3px 0 rgba(0, 0, 0, 0.1));
 				float: left;
-				margin-bottom: 25px;
+				margin-top: 15px;
+				margin-bottom: 22px;
 
 				@include breakpoint(768px) {
 					margin-top: 20px;
@@ -170,8 +169,8 @@
 			margin-bottom: 25px;
 
 			@include breakpoint(768px) {
+				margin-top: 28px;
 				padding: 0;
-				margin-top: 25px;
 			}
 		}
 	}

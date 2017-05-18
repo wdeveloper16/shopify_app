@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+	const NUM_PAGES = 3;
+	var _currentPage = 1;
+
     $('[data-toggle="popover"]').popover();
 
 	function countTickets() {
@@ -33,23 +36,26 @@ $(document).ready(function () {
 	}
 
 	//tick all ticket details
-	$('#select-ticket-all').click(function() {
+	$('#drop-code').click(function() {
 		var checkBoxes = $('.select-ticket');
+		var selectAllCheckBox = $('#select-ticket-all');
+		var checked = selectAllCheckBox.prop('checked');
+		selectAllCheckBox.prop('checked', !checked);
     
     	//check all tickets
-    	if ($(this).is(':checked')) {
+    	if (selectAllCheckBox.is(':checked')) {
   			checkBoxes.prop('checked', true);
-			$(this).siblings('label').html('<img class="icon icon-tick" src="images/tick/icon_tick_blue_small.svg">');
+			selectAllCheckBox.siblings('label').html('<img class="icon icon-tick" src="images/tick/icon_tick_blue_small.svg">');
 		}
 		else {
 			checkBoxes.prop('checked', false);
-			$(this).siblings('label').html('');
+			selectAllCheckBox.siblings('label').html('');
 		}
 
   		totalTickets = $('.select-ticket:checked').length;
 		//apply color to selected tr
 	    checkBoxes.each(function() {
-    		if ($(this).is(':checked')) {
+    		if (selectAllCheckBox.is(':checked')) {
   				checkBoxes.closest('tr').addClass('tickets-selected');
   				$('.select-label').html('<img class="icon icon-tick" src="images/tick/icon_tick_blue_small.svg">');
   			}
@@ -63,7 +69,7 @@ $(document).ready(function () {
     	changeTableHeader(totalTickets);
 	});
 
-	$('.select-ticket').click(function() {
+	$('.select-ticket').click(function(e) {
 	    totalTickets = $('.select-ticket:checked').length;
 		//select head checkbox
 		if ($(this).is(':checked')) {
@@ -81,6 +87,8 @@ $(document).ready(function () {
 
 		countTickets();
 		changeTableHeader(totalTickets);
+
+		e.stopPropagation();
 	});
 
 	$('.add-ticket-link').click(function() {
@@ -151,8 +159,20 @@ $(document).ready(function () {
 	});
 
 	$('.ticket-code').click(function() {
-		$(this).closest('tr').toggleClass('tickets-selected');
-		$(this).find('.manage-tickets-xs').toggle();
+		var $this = $(this);
+		setTimeout(function () {
+			$this.closest('tr').toggleClass('tickets-selected');
+			$this.find('.manage-tickets-xs').toggle();
+		});
+	});
+
+	$('tr.ticket-list').click(function(event) {
+		if (!$(this).hasClass('tickets-selected')) {
+			var $ctrl = $(event.target);
+			var $td = $($ctrl.parents('td')[0]);
+			if (!$td.hasClass('event-checkbox'))
+				$('#ticketDetailModal').modal('show');
+		}
 	});
 
 	$('.add-ticket-type').click(function() {
@@ -168,6 +188,7 @@ $(document).ready(function () {
 		var descending = $ctrl.hasClass('descending');
 
 		var $table = $($ctrl.parents('table')[0]);
+		$table.find('.sort').removeClass('ascending');
 		$table.find('.sort').removeClass('descending');
 
 		var $td = $($ctrl.parents('td')[0]);
@@ -175,6 +196,8 @@ $(document).ready(function () {
 
 		if (!descending)
 			$ctrl.addClass('descending');
+		else
+			$ctrl.addClass('ascending');
 
 		var getValue = function (row) {
 			var td = row.getElementsByTagName('td')[column];
@@ -255,29 +278,49 @@ $(document).ready(function () {
 	}*/
 	//increment / decrement button
 	$('.increment-qty').on('click',function() {
-		ticketTotal = parseInt($('#ticketQty').val())+1;
+		ticketTotal = parseInt($('#ticketQty').val()) + 1;
 	    $('#ticketQty').val(ticketTotal);
-
-		if (ticketTotal <= 0) {
-			$('.decrement-qty').attr('disabled', true);
-			$('.decrement-qty i').css({'color': '#c5cfd7'});
-		}
-		else {
-			$('.decrement-qty i').css({'color': '#0078bd'});
-		}
+		ticketQuantityChanged();
 	});
 
 	$('.decrement-qty').on('click',function() {
-		ticketTotal = parseInt($('#ticketQty').val())-1;
+		ticketTotal = parseInt($('#ticketQty').val()) - 1;
 		$('#ticketQty').val(ticketTotal);
+		ticketQuantityChanged();
+	});
 
-		if (ticketTotal <= 0) {
-			$('.decrement-qty').attr('disabled', true);
-			$('.decrement-qty i').css({'color': '#c5cfd7'});
+	$('#ticketQty').on('change', function() {
+		ticketQuantityChanged();
+	});
+
+	function ticketQuantityChanged() {
+		var val = $('#ticketQty').val();
+		if (val > 0)
+			$('.decrement-qty').removeClass('disabled');
+		else
+			$('.decrement-qty').addClass('disabled');
+	}
+
+	$('.pagination li').on('click',function() {
+		var $this = $(this);
+		if ($this.is(':first-child')) {
+			_currentPage = _currentPage > 1 ? _currentPage - 1 : _currentPage;
+		}
+		else if ($this.is(':last-child')) {
+			_currentPage = _currentPage < NUM_PAGES ? _currentPage + 1 : _currentPage;
 		}
 		else {
-			$('.decrement-qty i').css({'color': '#0078bd'});
+			_currentPage = $this.index();
 		}
+
+		var $children = $this.parent().children('li');
+		$children.find('a').removeClass('disabled');
+		if (_currentPage == 1)
+			$children.eq(0).find('a').addClass('disabled');
+		else if (_currentPage == NUM_PAGES)
+			$children.eq(NUM_PAGES+1).find('a').addClass('disabled');
+
+		$children.eq(_currentPage).find('a').addClass('disabled');
 	});
 
 	//Create ticket - wysiwyg

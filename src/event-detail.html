@@ -32,7 +32,7 @@
                 <button type="button" class="btn-nav-toggle">
                     <img src="./images/icon_nav_blue.svg" alt="">
                 </button>
-                <span class="page-title">Dashboard</span>
+                <span class="page-title">Lovebox</span>
             </div>
             <div class="col-xs-12 header-right-nav">
                 <div class="header-toolbar">
@@ -123,9 +123,9 @@
                                 <input type="text" name="ticketHolder" id="ticketHolder" class="form-control">
                                 <label for="ticketQty">Quantity</label>
                                 <div class="form-qty-group">
-                                  <button class="decrement-qty"><img class="icon icon-minus" src="images/minus/icon_minus_quantity_gray.svg"></button>
+                                  <button class="decrement-qty disabled"></button>
                                   <input type="text" name="ticketQty" id="ticketQty" class="form-control form-qty" value="0">
-                                  <button class="increment-qty"><img class="icon icon-plus" src="images/plus/icon_plus_quantity_blue.svg"></button>
+                                  <button class="increment-qty"></button>
                                   <span class="qty-message">You can asign multiple tickets to one ticket holder.</span>
                                 </div>
                                 <label for="ticketHolder">Email</label>
@@ -147,7 +147,7 @@
                       <thead>
                         <tr>
                           <td class="event-checkbox-header hidden-xs">
-                            <div class="dropdown drop-code" data-toggle="popover" data-trigger="hover" data-content="Select all products">
+                            <div class="dropdown drop-code" id="drop-code" data-toggle="popover" data-trigger="hover" data-content="Select all products">
                               <input type="checkbox" name="select-ticket-all" id="select-ticket-all">
                               <label for="select-ticket-all" class="select-label-all"></label>
                               <span class="caret" ></span>
@@ -211,7 +211,8 @@
                               <label for="select-ticket1" class="select-label"></label>
                           </td>
                           <td class="ticket-code" data-toggle="collapse" data-target="#ticketHolder1" class="visible-xs name-accordion">
-                            <a href="#" class="ticket-code-link" data-toggle="modal" data-target="#ticketDetailModal">1DFS4D</a>
+                            <a class="ticket-code-link">1DFS4D</a>
+                            <!--<a href="#" class="ticket-code-link" data-toggle="modal" data-target="#ticketDetailModal">1DFS4D</a>-->
                             <span class="ticket-name visible-xs">Adams, Paul</span>
                             <img class="icon icon-arrowdown visible-xs" src="images/arrowdown/icon_arrowdown_gray_thin.svg">
                             <p id="ticketHolder1" class="collapse ticket-data-xs">
@@ -246,12 +247,12 @@
                               <label for="select-ticket2" class="select-label"></label>
                           </td>
                           <td class="ticket-code" data-toggle="collapse" data-target="#ticketHolder2" class="visible-xs name-accordion">
-                            <a href="#" class="ticket-code-link">1SD45D</a>
+                            <a class="ticket-code-link">1SD45D</a>
                             <span class="ticket-name visible-xs">Brown, Alexander</span>
                             <img class="icon icon-arrowdown visible-xs" src="images/arrowdown/icon_arrowdown_gray_thin.svg">
                             <p id="ticketHolder2" class="collapse ticket-data-xs">
-                              <span>Ticket Type:</span> <span class="ticketholder-data">General Admission</span>
-                              <span>Delivered:</span> <span class="ticketholder-data">12 Mar 2016</span>
+                              <span>Ticket Type:</span> <span class="ticketholder-data">General Admission</span><br>
+                              <span>Delivered:</span> <span class="ticketholder-data">12 Mar 2016</span><br>
                               <span>Email:</span> <span class="ticketholder-data">alexander.brown@gmail.com</span>
                             </p>
                             <span class="manage-tickets manage-tickets-xs">
@@ -281,12 +282,12 @@
                               <label for="select-ticket3" class="select-label"></label>
                           </td>
                           <td class="ticket-code" data-toggle="collapse" data-target="#ticketHolder3" class="visible-xs name-accordion">
-                            <a href="#" class="ticket-code-link">2DSF89</a>
+                            <a class="ticket-code-link">2DSF89</a>
                             <span class="ticket-name visible-xs">Child, Aimee</span>
                             <img class="icon icon-arrowdown visible-xs" src="images/arrowdown/icon_arrowdown_gray_thin.svg">
                             <p id="ticketHolder3" class="collapse ticket-data-xs">
-                              <span>Ticket Type:</span> <span class="ticketholder-data">General Admission</span>
-                              <span>Delivered:</span> <span class="ticketholder-data">02 Aug 2016</span>
+                              <span>Ticket Type:</span> <span class="ticketholder-data">General Admission</span><br>
+                              <span>Delivered:</span> <span class="ticketholder-data">02 Aug 2016</span><br>
                               <span>Email:</span> <span class="ticketholder-data">aimee.child@yahoo.com</span>
                             </p>
                             <span class="manage-tickets manage-tickets-xs">
@@ -316,12 +317,12 @@
                               <label for="select-ticket4" class="select-label"></label>
                           </td>
                           <td class="ticket-code" data-toggle="collapse" data-target="#ticketHolder4" class="visible-xs name-accordion">
-                            <a href="#" class="ticket-code-link">6ASDS4</a>
+                            <a class="ticket-code-link">6ASDS4</a>
                             <span class="ticket-name visible-xs">Coombs, Stacey</span>
                             <img class="icon icon-arrowdown visible-xs" src="images/arrowdown/icon_arrowdown_gray_thin.svg">
                             <p id="ticketHolder4" class="collapse ticket-data-xs">
-                              <span>Ticket Type:</span> <span class="ticketholder-data">Meet and greet</span>
-                              <span>Delivered:</span> <span class="ticketholder-data">26 Dec 2016</span>
+                              <span>Ticket Type:</span> <span class="ticketholder-data">Meet and greet</span><br>
+                              <span>Delivered:</span> <span class="ticketholder-data">26 Dec 2016</span><br>
                               <span>Email:</span> <span class="ticketholder-data">stacey.coombs@gmail.com</span>
                             </p>
                             <span class="manage-tickets manage-tickets-xs">
@@ -479,17 +480,13 @@
                     <nav aria-label="Page navigation" class="text-center">
                       <ul class="pagination pagination-sm">
                         <li>
-                          <a href="#" aria-label="Previous" class="page-nav">
-                            <img src="./images/arrowleft/icon_arrowleft_gray.svg">
-                          </a>
+                          <a aria-label="Previous" class="page-nav page-nav--prev disabled"></a>
                         </li>
-                        <li class="disabled"><a href="#">1</a></li>
-                        <li class="active"><a href="#">2</a></li>
-                        <li class="active"><a href="#">3</a></li>
+                        <li><a class="disabled">1</a></li>
+                        <li ><a>2</a></li>
+                        <li><a>3</a></li>
                         <li>
-                          <a href="#" aria-label="Next" class="page-nav">
-                            <img src="./images/arrowright/icon_arrowright_blue.svg">
-                          </a>
+                          <a aria-label="Next" class="page-nav page-nav--next"></a>
                         </li>
                       </ul>
                     </nav>
